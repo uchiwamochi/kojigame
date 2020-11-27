@@ -13,16 +13,16 @@
 export default {
     methods:{
       up(){
-        
+        alert("up")
       },
       down(){
-
+        alert("down")
       },
       left(){
-
+        alert("left")
       },
       right(){
-        
+        alert("right")
       }
 
     }
@@ -35,7 +35,7 @@ export default {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: skyblue;/*背景色*/
+  background: rgb(206, 34, 48);/*背景色*/
   z-index: 0;
 }
 btn{
@@ -44,15 +44,18 @@ btn{
 }
 .up{
   top: 0px;
+  left:42%;
 }
 .down{
   bottom: 0px;
+  left:42%;
 }
 .left{
-  
-  left: 0px;
+  left: 0;
+  top: 35%;
 }
 .right{
   right: 0px;
+  top: 35%;
 }
 </style>
