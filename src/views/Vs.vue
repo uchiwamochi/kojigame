@@ -57,7 +57,7 @@ export default {
         let i = 1
         while(self.field[Number(payload.coordY) - i][payload.coordX] == 0){
           self.field[Number(payload.coordY) - i].splice(Number(payload.coordX) ,1,self.field[Number(payload.coordY) - i+1][payload.coordX])
-          self.field[Number(payload.coordY) -i+1].splice(Number(payload.coordX),1,0)
+          self.field[Number(payload.coordY) -i+1].splice(Number(payload.coordX),1,"0")
           i++
         }
       }else if(payload.direction == "down"){
@@ -65,7 +65,7 @@ export default {
         let i = 1
         while(self.field[Number(payload.coordY) + i][payload.coordX] == 0){
           self.field[Number(payload.coordY) + i].splice(Number(payload.coordX) ,1,self.field[Number(payload.coordY) + i-1][payload.coordX])
-          self.field[Number(payload.coordY) +i-1].splice(Number(payload.coordX),1,0)
+          self.field[Number(payload.coordY) +i-1].splice(Number(payload.coordX),1,"0")
           i++
         }
       }else if(payload.direction == "left"){
@@ -73,7 +73,7 @@ export default {
         let i = 1
         while(self.field[payload.coordY][Number(payload.coordX) - i] == 0){
           self.field[payload.coordY].splice(Number(payload.coordX) - i,1,self.field[payload.coordY][Number(payload.coordX) - i+1])
-          self.field[payload.coordY].splice(Number(payload.coordX) - i+1,1,0)
+          self.field[payload.coordY].splice(Number(payload.coordX) - i+1,1,"0")
           i++
         }
       }else if(payload.direction == "right"){
@@ -81,7 +81,7 @@ export default {
         let i = 1
         while(self.field[payload.coordY][payload.coordX + i] == 0){
           self.field[payload.coordY].splice(Number(payload.coordX) + i,1,self.field[payload.coordY][Number(payload.coordX) + i-1])
-          self.field[payload.coordY].splice(Number(payload.coordX) + i-1,1,0)
+          self.field[payload.coordY].splice(Number(payload.coordX) + i-1,1,"0")
           i++;
         }
       }
