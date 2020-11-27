@@ -1,22 +1,27 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Solo from '../views/Solo.vue'
+import Vs from '../views/Vs.vue'
+import RemoteVs from '../views/RemoteVs.vue'
 
 Vue.use(VueRouter)
 
+//どのコンポーネントにするかコンポーネントの数だけpathをつくる
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/solo',
+    name: 'Solo',
+    component: Solo
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/vs',
+    name: 'Vs',
+    component: Vs
+  },
+  {
+    path: '/remotevs',
+    name: 'RemoteVs',
+    component: RemoteVs
   }
 ]
 
