@@ -1,10 +1,10 @@
 <template>
   <div class="koma">
     <div class="circle" v-bind:style="{background:bgcolor}">
-      <btn class="up" @click="up()">&#9650;</btn>
-      <btn class="down" @click="down()">&#9660;</btn>
-      <btn class="left" @click="left()">&#9664;</btn>
-      <btn class="right" @click="right()">&#9654;</btn>
+      <btn class="up" @click="emit2vs(coordX,coordY,'up')">&#9650;</btn>
+      <btn class="down" @click="emit2vs(coordX,coordY,'down')">&#9660;</btn>
+      <btn class="left" @click="emit2vs(coordX,coordY,'left')">&#9664;</btn>
+      <btn class="right" @click="emit2vs(coordX,coordY,'right')">&#9654;</btn>
       <!-- {{bgcolor}} -->
     </div>
     
@@ -14,21 +14,11 @@
 <script>
 export default {
   name:"koma",
-  props:["bgcolor"],
+  props:["bgcolor","coordX","coordY"],
   methods:{
-    up(){
-      alert("up")
-    },
-    down(){
-      alert("down")
-    },
-    left(){
-      alert("left")
-    },
-    right(){
-      alert("right")
-    }
-
+    emit2vs(x,y,dirc) {
+      this.$emit('child-event',{"coordX":x, "coordY":y, "direction":dirc});
+   }
   }
 }
 </script>

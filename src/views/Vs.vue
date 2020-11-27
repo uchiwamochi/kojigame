@@ -6,11 +6,11 @@
       <tr v-for="(rw,i) in field" :key="i">
         <td v-for="(cl,j) in rw" :key="j" align="center">
           <!-- {{cl}} -->
-          <Koma v-show="cl != 0" :bgcolor="cellColor(cl)" />
+          <Koma v-show="cl != 0" :coord-y="i" :coord-x="j" :bgcolor="cellColor(cl)" @child-event="moveKoma" />
         </td>
       </tr>
     </table>
-
+    {{field}}
   </div>
 </template>
 
@@ -28,11 +28,11 @@ export default {
       player1Color:"red",
       player2:["f","g","h","i","j"],  
       player2Color:"skyblue",
-      field:[["a",0,0,0,"f"],
-             ["b",0,0,0,"g"],
-             ["c",0,0,0,"h"],
-             ["d",0,0,0,"i"],
-             ["e",0,0,0,"j"]]
+      field:[["a","0","0","0","f"],
+             ["b","0","0","0","g"],
+             ["c","0","0","0","h"],
+             ["d","0","0","0","i"],
+             ["e","0","0","0","j"]]
     
     }
   },
@@ -49,6 +49,33 @@ export default {
         return self.player2Color
       }else{
         return 0
+      }
+    },
+    moveKoma(payload) {
+      if(payload.direction == "up"){
+        const self = this
+        if(self.field[payload.coordY - 1][payload.coordX] == 0){
+          self.field[Number(payload.coordY) - 1].splice(Number(payload.coordX) ,1,self.field[payload.coordY][payload.coordX])
+          self.field[payload.coordY].splice(Number(payload.coordX),1,0)
+        }
+      }else if(payload.direction == "down"){
+        const self = this
+        if(self.field[payload.coordY + 1][payload.coordX] == 0){
+          self.field[Number(payload.coordY) + 1].splice(Number(payload.coordX) ,1,self.field[payload.coordY][payload.coordX])
+          self.field[payload.coordY].splice(Number(payload.coordX),1,0)
+        }
+      }else if(payload.direction == "left"){
+        const self = this
+        if(self.field[payload.coordY][payload.coordX - 1] == 0){
+          self.field[payload.coordY].splice(Number(payload.coordX) - 1,1,self.field[payload.coordY][payload.coordX])
+          self.field[payload.coordY].splice(Number(payload.coordX),1,0)
+        }
+      }else if(payload.direction == "right"){
+        const self = this
+        if(self.field[payload.coordY][payload.coordX + 1] == 0){
+          self.field[payload.coordY].splice(Number(payload.coordX) + 1,1,self.field[payload.coordY][payload.coordX])
+          self.field[payload.coordY].splice(Number(payload.coordX),1,0)
+        }
       }
     }
   },
