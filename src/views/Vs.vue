@@ -1,117 +1,13 @@
 <template>
   <div class="Home">
     <h1>VS</h1>
+  
     <table align="center" border="1">
-      <tr>
-        <td align="center">
-
-          <Koma1 v-show="field[0][0] == 'a' || field[0][0] == 'b' || field[0][0] == 'c' || field[0][0] == 'd' || field[0][0] == 'e' " />
-          <Koma2 v-show="field[0][0] == 'f' || field[0][0] == 'g' || field[0][0] == 'h' || field[0][0] == 'i' || field[0][0] == 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[0][1] == 'a' || field[0][1] == 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[0][1] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[0][2] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[0][2] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[0][3] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[0][3] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[0][4] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[0][4] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-      </tr>
-      <tr>
-        <td align="center">
-          <Koma1 v-show="field[1][0] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[1][0] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[1][1] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[1][1] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[1][2] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[1][2] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[1][3] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[1][3] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[1][4] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[1][4] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-      </tr>
-      <tr>
-        <td align="center">
-          <Koma1 v-show="field[2][0] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[2][0] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[2][1] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[2][1] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[2][2] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[2][2] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[2][3] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[2][3] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[2][4] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[2][4] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-      </tr>
-      <tr>
-        <td> 
-          {{field[3][0]}}
-          <Koma1 v-show="field[3][0] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[3][0] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[3][1] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[3][1] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[3][2] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[3][2] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[3][3] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[3][3] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[3][4] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[3][4] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-      </tr>
-      <tr>
-        <td align="center">
-          <Koma1 v-show="field[4][0] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[4][0] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[4][1] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[4][1] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[4][2] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[4][2] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[4][3] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[4][3] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[4][4] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[4][4] == 'f' || 'g' || 'h' || 'i' || 'j'" />
+      <tr v-for="(rw,i) in field" :key="i">
+        <td v-for="(cl,j) in rw" :key="j" align="center">
+          <!-- {{cl}} -->
+          <Koma1 v-show="player1.indexOf(cl) != -1" />
+          <Koma2 v-show="player2.indexOf(cl) != -1" />
         </td>
       </tr>
     </table>
@@ -131,6 +27,8 @@ export default {
   },
   data(){
     return{
+      player1:["a","b","c","d","e"],
+      player2:["f","g","h","i","j"],  
       field:[["a",0,0,0,"f"],
              ["b",0,0,0,"g"],
              ["c",0,0,0,"h"],
@@ -146,7 +44,6 @@ export default {
   td{
     width:100px;
     height:100px;
-
   }
 
     
