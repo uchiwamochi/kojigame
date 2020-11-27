@@ -5,27 +5,31 @@
       <btn class="down" @click="down()">&#9660;</btn>
       <btn class="left" @click="left()">&#9664;</btn>
       <btn class="right" @click="right()">&#9654;</btn>
+      {{bgcolor}}
     </div>
     
   </div>
 </template>
+
 <script>
 export default {
-    methods:{
-      up(){
-        alert("up")
-      },
-      down(){
-        alert("down")
-      },
-      left(){
-        alert("left")
-      },
-      right(){
-        alert("right")
-      }
-
+  name:"koma",
+  props:["bgcolor"],
+  methods:{
+    up(){
+      alert("up")
+    },
+    down(){
+      alert("down")
+    },
+    left(){
+      alert("left")
+    },
+    right(){
+      alert("right")
     }
+
+  }
 }
 </script>
 
@@ -35,7 +39,7 @@ export default {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgb(206, 34, 48);/*背景色*/
+  background: skyblue;/*背景色*/
   z-index: 0;
 }
 btn{

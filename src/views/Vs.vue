@@ -6,8 +6,7 @@
       <tr v-for="(rw,i) in field" :key="i">
         <td v-for="(cl,j) in rw" :key="j" align="center">
           <!-- {{cl}} -->
-          <Koma1 v-show="player1.indexOf(cl) != -1" />
-          <Koma2 v-show="player2.indexOf(cl) != -1" />
+          <Koma v-show="cl != 0" :bgcolor="cellColor(cl)" />
         </td>
       </tr>
     </table>
@@ -16,19 +15,19 @@
 </template>
 
 <script>
-import Koma1 from "../components/Koma1.vue"
-import Koma2 from "../components/Koma2.vue"
+import Koma from "../components/Koma.vue"
 
 export default {
   name: 'Home',
   components: {
-    Koma1,
-    Koma2
+    Koma,
   },
   data(){
     return{
       player1:["a","b","c","d","e"],
+      player1Color:"red",
       player2:["f","g","h","i","j"],  
+      player2Color:"blue",
       field:[["a",0,0,0,"f"],
              ["b",0,0,0,"g"],
              ["c",0,0,0,"h"],
@@ -36,6 +35,24 @@ export default {
              ["e",0,0,0,"j"]]
     
     }
+  },
+  methods:{
+    cellColor(cellname){
+      const self = this
+      // console.log(cellname)
+
+      if(self.player1.indexOf(cellname) != -1){
+        console.log(cellname + "p1")
+        return self.player1Color
+      }else if(self.player2.indexOf(cellname) != -1){
+        console.log(cellname + "p2")
+        return self.player2Color
+      }else{
+        return 0
+      }
+    }
+  },
+  computed:{
   }
 }
 </script>
