@@ -5,11 +5,11 @@
       <tr>
         <td align="center">
 
-          <Koma1 v-show="field[0][0] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[0][0] == 'f' || 'g' || 'h' || 'i' || 'j'" />
+          <Koma1 v-show="field[0][0] == 'a' || field[0][0] == 'b' || field[0][0] == 'c' || field[0][0] == 'd' || field[0][0] == 'e' " />
+          <Koma2 v-show="field[0][0] == 'f' || field[0][0] == 'g' || field[0][0] == 'h' || field[0][0] == 'i' || field[0][0] == 'j'" />
         </td>
         <td align="center">
-          <Koma1 v-show="field[0][1] == 'a' || 'b' || 'c' || 'd' || 'e' " />
+          <Koma1 v-show="field[0][1] == 'a' || field[0][1] == 'b' || 'c' || 'd' || 'e' " />
           <Koma2 v-show="field[0][1] == 'f' || 'g' || 'h' || 'i' || 'j'" />
         </td>
         <td align="center">
@@ -71,6 +71,7 @@
       </tr>
       <tr>
         <td> 
+          {{field[3][0]}}
           <Koma1 v-show="field[3][0] == 'a' || 'b' || 'c' || 'd' || 'e' " />
           <Koma2 v-show="field[3][0] == 'f' || 'g' || 'h' || 'i' || 'j'" />
         </td>
