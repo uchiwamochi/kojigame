@@ -27,7 +27,7 @@ export default {
       player1:["a","b","c","d","e"],
       player1Color:"red",
       player2:["f","g","h","i","j"],  
-      player2Color:"blue",
+      player2Color:"skyblue",
       field:[["a",0,0,0,"f"],
              ["b",0,0,0,"g"],
              ["c",0,0,0,"h"],

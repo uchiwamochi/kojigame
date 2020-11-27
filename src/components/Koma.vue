@@ -1,11 +1,11 @@
 <template>
   <div class="koma">
-    <div class="circle">
+    <div class="circle" v-bind:style="{background:bgcolor}">
       <btn class="up" @click="up()">&#9650;</btn>
       <btn class="down" @click="down()">&#9660;</btn>
       <btn class="left" @click="left()">&#9664;</btn>
       <btn class="right" @click="right()">&#9654;</btn>
-      {{bgcolor}}
+      <!-- {{bgcolor}} -->
     </div>
     
   </div>
@@ -48,11 +48,11 @@ btn{
 }
 .up{
   top: 0px;
-  left:42%;
+  left:41%;
 }
 .down{
   bottom: 0px;
-  left:42%;
+  left:41%;
 }
 .left{
   left: 0;
