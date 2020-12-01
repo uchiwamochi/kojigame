@@ -1,143 +1,93 @@
 <template>
   <div class="Home">
     <h1>VS</h1>
+  
     <table align="center" border="1">
-      <tr>
-        <td align="center">
-
-          <Koma1 v-show="field[0][0] == 'a' || field[0][0] == 'b' || field[0][0] == 'c' || field[0][0] == 'd' || field[0][0] == 'e' " />
-          <Koma2 v-show="field[0][0] == 'f' || field[0][0] == 'g' || field[0][0] == 'h' || field[0][0] == 'i' || field[0][0] == 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[0][1] == 'a' || field[0][1] == 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[0][1] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[0][2] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[0][2] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[0][3] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[0][3] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[0][4] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[0][4] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-      </tr>
-      <tr>
-        <td align="center">
-          <Koma1 v-show="field[1][0] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[1][0] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[1][1] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[1][1] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[1][2] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[1][2] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[1][3] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[1][3] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[1][4] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[1][4] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-      </tr>
-      <tr>
-        <td align="center">
-          <Koma1 v-show="field[2][0] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[2][0] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[2][1] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[2][1] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[2][2] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[2][2] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[2][3] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[2][3] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[2][4] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[2][4] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-      </tr>
-      <tr>
-        <td> 
-          {{field[3][0]}}
-          <Koma1 v-show="field[3][0] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[3][0] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[3][1] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[3][1] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[3][2] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[3][2] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[3][3] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[3][3] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[3][4] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[3][4] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-      </tr>
-      <tr>
-        <td align="center">
-          <Koma1 v-show="field[4][0] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[4][0] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[4][1] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[4][1] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[4][2] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[4][2] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[4][3] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[4][3] == 'f' || 'g' || 'h' || 'i' || 'j'" />
-        </td>
-        <td align="center">
-          <Koma1 v-show="field[4][4] == 'a' || 'b' || 'c' || 'd' || 'e' " />
-          <Koma2 v-show="field[4][4] == 'f' || 'g' || 'h' || 'i' || 'j'" />
+      <tr v-for="(rw,i) in field" :key="i">
+        <td v-for="(cl,j) in rw" :key="j" align="center">
+          <!-- {{cl}} -->
+          <Koma v-show="cl != 0" :coord-y="i" :coord-x="j" :bgcolor="cellColor(cl)" @child-event="moveKoma" />
         </td>
       </tr>
     </table>
-
+    {{field}}
   </div>
 </template>
 
 <script>
-import Koma1 from "../components/Koma1.vue"
-import Koma2 from "../components/Koma2.vue"
+import Koma from "../components/Koma.vue"
 
 export default {
   name: 'Home',
   components: {
-    Koma1,
-    Koma2
+    Koma,
   },
   data(){
     return{
-      field:[["a",0,0,0,"f"],
-             ["b",0,0,0,"g"],
-             ["c",0,0,0,"h"],
-             ["d",0,0,0,"i"],
-             ["e",0,0,0,"j"]]
+      player1:["a","b","k1","d","e"],
+      player1Color:"red",
+      player2:["f","g","k2","i","j"],  
+      player2Color:"skyblue",
+      field:[["a","0","0","0","f"],
+             ["b","0","0","0","g"],
+             ["k1","0","0","0","k2"],
+             ["d","0","0","0","i"],
+             ["e","0","0","0","j"]]
     
     }
+  },
+  methods:{
+    cellColor(cellname){
+      const self = this
+      // console.log(cellname)
+
+      if(self.player1.indexOf(cellname) != -1){
+        console.log(cellname + "p1")
+        return self.player1Color
+      }else if(self.player2.indexOf(cellname) != -1){
+        console.log(cellname + "p2")
+        return self.player2Color
+      }else{
+        return 0
+      }
+    },
+    moveKoma(payload) {
+      if(payload.direction == "up"){
+        const self = this
+        let i = 1
+        while(self.field[Number(payload.coordY) - i][payload.coordX] == 0){
+          self.field[Number(payload.coordY) - i].splice(Number(payload.coordX) ,1,self.field[Number(payload.coordY) - i+1][payload.coordX])
+          self.field[Number(payload.coordY) -i+1].splice(Number(payload.coordX),1,"0")
+          i++
+        }
+      }else if(payload.direction == "down"){
+        const self = this
+        let i = 1
+        while(self.field[Number(payload.coordY) + i][payload.coordX] == 0){
+          self.field[Number(payload.coordY) + i].splice(Number(payload.coordX) ,1,self.field[Number(payload.coordY) + i-1][payload.coordX])
+          self.field[Number(payload.coordY) +i-1].splice(Number(payload.coordX),1,"0")
+          i++
+        }
+      }else if(payload.direction == "left"){
+        const self = this
+        let i = 1
+        while(self.field[payload.coordY][Number(payload.coordX) - i] == 0){
+          self.field[payload.coordY].splice(Number(payload.coordX) - i,1,self.field[payload.coordY][Number(payload.coordX) - i+1])
+          self.field[payload.coordY].splice(Number(payload.coordX) - i+1,1,"0")
+          i++
+        }
+      }else if(payload.direction == "right"){
+        const self = this
+        let i = 1
+        while(self.field[payload.coordY][payload.coordX + i] == 0){
+          self.field[payload.coordY].splice(Number(payload.coordX) + i,1,self.field[payload.coordY][Number(payload.coordX) + i-1])
+          self.field[payload.coordY].splice(Number(payload.coordX) + i-1,1,"0")
+          i++;
+        }
+      }
+    }
+  },
+  computed:{
   }
 }
 </script>
@@ -146,7 +96,6 @@ export default {
   td{
     width:100px;
     height:100px;
-
   }
 
     
