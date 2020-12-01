@@ -1,7 +1,11 @@
 <template>
   <div class="Home">
     <h1>VS</h1>
-  
+    
+    <div class="user1" style="float:left">Player1</div> 
+    {{count}}
+    <div class="user2" style="float:right">Player2</div>
+    
     <table align="center" border="1">
       <tr v-for="(rw,i) in field" :key="i">
         <td v-for="(cl,j) in rw" :key="j" align="center">
@@ -10,7 +14,7 @@
         </td>
       </tr>
     </table>
-    {{field}}
+    <!-- {{field}} -->
   </div>
 </template>
 
@@ -32,8 +36,8 @@ export default {
              ["b","0","0","0","g"],
              ["k1","0","0","0","k2"],
              ["d","0","0","0","i"],
-             ["e","0","0","0","j"]]
-    
+             ["e","0","0","0","j"]],
+      count:0
     }
   },
   methods:{
@@ -42,10 +46,10 @@ export default {
       // console.log(cellname)
 
       if(self.player1.indexOf(cellname) != -1){
-        console.log(cellname + "p1")
+        // console.log(cellname + "p1")
         return self.player1Color
       }else if(self.player2.indexOf(cellname) != -1){
-        console.log(cellname + "p2")
+        // console.log(cellname + "p2")
         return self.player2Color
       }else{
         return 0
@@ -86,7 +90,17 @@ export default {
         }
       }
     }
+
   },
+  
+  
+  watch: {
+      field:function () {
+        // console.log("かわったよ")
+        this.count += 1
+      }
+  },
+
   computed:{
   }
 }
@@ -94,10 +108,18 @@ export default {
 
 <style scoped>
   td{
-    width:100px;
+    width:90px;
     height:100px;
   }
 
+  .user1{
+    width:30%;
+  }
+
+  .user2{
+    width:30%;
+  }
+  
     
   </style>
 
