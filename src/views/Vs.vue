@@ -26,7 +26,7 @@
     </table>
 
     <button class="btn btn--orange btn--radius" @click="reset()"><h3>reset</h3></button>
-    <!-- {{field}} -->
+    {{field}}
   </div>
 </template>
 
@@ -50,7 +50,7 @@ export default {
       king2Color:"blue",
       field:[["a","0","0","0","f"],
              ["b","0","0","0","g"],
-             ["k1","0","1","0","k2"],
+             ["k1","0","0","0","k2"],
              ["d","0","0","0","i"],
              ["e","0","0","0","j"]],
       count1:0,
@@ -80,35 +80,45 @@ export default {
       if(payload.direction == "up"){
         const self = this
         let i = 1
-        while(self.field[Number(payload.coordY) - i][payload.coordX] == 0 || self.field[Number(payload.coordY) - i][payload.coordX] == 1){
+        while(self.field[Number(payload.coordY) - i][payload.coordX] == 0){
+          i++
+        }
+        if(i!=0){
           self.field[Number(payload.coordY) - i].splice(Number(payload.coordX) ,1,self.field[Number(payload.coordY) - i+1][payload.coordX])
           self.field[Number(payload.coordY) -i+1].splice(Number(payload.coordX),1,"0")
-          i++
         }
       }else if(payload.direction == "down"){
         const self = this
-        let i = 1
-        while(self.field[Number(payload.coordY) + i][payload.coordX] == 0 || self.field[Number(payload.coordY) + i][payload.coordX] == 1){
-          self.field[Number(payload.coordY) + i].splice(Number(payload.coordX) ,1,self.field[Number(payload.coordY) + i-1][payload.coordX])
-          self.field[Number(payload.coordY) +i-1].splice(Number(payload.coordX),1,"0")
+        let i = 0
+        while(self.field[Number(payload.coordY) + i + 1][payload.coordX] == 0){
           i++
+        }
+        if(i!=0){
+          self.field[Number(payload.coordY) + i].splice(Number(payload.coordX) ,1,self.field[Number(payload.coordY)][payload.coordX])
+          //self.field[Number(payload.coordY) +i-1].splice(Number(payload.coordX),1,"0")
         }
       }else if(payload.direction == "left"){
         const self = this
-        let i = 1
-        while(self.field[payload.coordY][Number(payload.coordX) - i] == 0 || self.field[payload.coordY][Number(payload.coordX) - i] == 1){
-          self.field[payload.coordY].splice(Number(payload.coordX) - i,1,self.field[payload.coordY][Number(payload.coordX) - i+1])
-          self.field[payload.coordY].splice(Number(payload.coordX) - i+1,1,"0")
+        let i = 0
+        while(self.field[payload.coordY][Number(payload.coordX) - i - 1]  == 0){  
           i++
         }
+        if(i!=0){
+          self.field[payload.coordY].splice(Number(payload.coordX) - i,1,self.field[payload.coordY][Number(payload.coordX)])
+          self.field[payload.coordY].splice(Number(payload.coordX),1,"0")
+        }
+        
       }else if(payload.direction == "right"){
         const self = this
-        let i = 1
-        while(self.field[payload.coordY][payload.coordX + i] == 0 || self.field[payload.coordY][payload.coordX + i] == 1){
-          self.field[payload.coordY].splice(Number(payload.coordX) + i,1,self.field[payload.coordY][Number(payload.coordX) + i-1])
-          self.field[payload.coordY].splice(Number(payload.coordX) + i-1,1,"0")
-          i++;
+        for(let i=1; i < 5; i++){
+          if(self.field[payload.coordY][payload.coordX + i] != 0 ){
+            self.field[payload.coordY].splice(Number(payload.coordX) + i - 1 ,1,self.field[payload.coordY][Number(payload.coordX)])
+            self.field[payload.coordY].splice(Number(payload.coordX) ,1,"0") 
+            break
+          }
         }
+        
+        
       }
     },
     reset(){
@@ -126,13 +136,13 @@ export default {
     movecount2(){
       this.count2 += 1
     },
-    
 
   },
   
   
   // watch: {
   //     field:function () {
+  //       // console.log("かわったよ")
   //       this.count += 1
   //     }
   // },
