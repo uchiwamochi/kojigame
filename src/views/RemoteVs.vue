@@ -62,7 +62,7 @@ export default {
       count1:0,
       count2:0,
       turn:1,
-      alteri:null,
+      alteri:null
     }
   },
   methods:{
@@ -196,6 +196,7 @@ export default {
       this.count1 = 0
       this.count2 = 0
       this.turn = 1
+      this.send()
     },
     
     changeTurn(){
@@ -226,7 +227,8 @@ export default {
   created(){
     const self = this
     firebase.database().ref("test").on('value', function(snapshot){
-			self.field = snapshot.val().field
+      self.field = snapshot.val().field
+      self.changeTurn()
     })
 
   }
