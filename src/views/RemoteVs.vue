@@ -80,7 +80,6 @@ export default {
           Object.keys(rootList).forEach((val) => {
             rootList[val].id = val
             console.log(rootList[val])
-            self.field = rootList[val]
           })
         }
       })
