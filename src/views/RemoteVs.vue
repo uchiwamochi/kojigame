@@ -71,19 +71,6 @@ export default {
         field: this.field
       });
     },
-    getData(){
-      const self = this
-      firebase.database().ref('test').on('value', snapshot => {
-        if (snapshot) {
-          const rootList = snapshot.val()
-          // データオブジェクトを配列に変更する
-          Object.keys(rootList).forEach((val) => {
-            rootList[val].id = val
-            console.log(rootList[val])
-          })
-        }
-      })
-    },
 
     cellColor(cellname){
       const self = this
@@ -236,6 +223,13 @@ export default {
   },
   computed:{
   },
+  created(){
+    const self = this
+    firebase.database().ref("test").on('value', function(snapshot){
+			self.field = snapshot.val().field
+    })
+
+  }
 }
 </script>
 
