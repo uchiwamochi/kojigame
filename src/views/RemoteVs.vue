@@ -28,11 +28,6 @@
 
     <button class="btn btn--orange btn--radius" @click="reset()"><h3>reset</h3></button>
     <!-- {{field}} -->
-    
-    <div>
-      {{field}}
-    </div>
-
   </div>
 </template>
 
@@ -68,7 +63,10 @@ export default {
   methods:{
     send(){
       firebase.database().ref("/test").set({
-        field: this.field
+        field: this.field,
+        turn : this.turn,
+        count1 : this.count1,
+        count2 : this.count2
       });
     },
 
@@ -200,7 +198,6 @@ export default {
     },
     
     changeTurn(){
-      console.log("change")
       const self = this
       if(self.turn == 1){
         self.turn = 2
@@ -228,7 +225,9 @@ export default {
     const self = this
     firebase.database().ref("test").on('value', function(snapshot){
       self.field = snapshot.val().field
-      self.changeTurn()
+      self.turn = snapshot.val().turn
+      self.count1 = snapshot.val().count1
+      self.count2 = snapshot.val().count2
     })
 
   }
