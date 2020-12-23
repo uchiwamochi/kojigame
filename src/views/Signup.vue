@@ -27,7 +27,7 @@ export default {
       firebase.auth().createUserWithEmailAndPassword(this.mailaddress, this.password)
       .then(
         // 成功時の処理
-
+        alert('登録が完了しました、もう一度Remort VSをクリックして下さい')
       )
       .catch(
         // エラー時の処理 

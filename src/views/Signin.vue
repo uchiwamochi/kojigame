@@ -1,6 +1,6 @@
 <template>
   <div class="signin">
-    <a1>このサービスの利用にはアカウントの登録が必要です</a1>
+    <a1>このサービスの利用にはログインが必要です</a1>
     <table class="table" align="center" border="0">
         <tr>
           <th>メールアドレス：</th>
@@ -16,7 +16,7 @@
         </tr>
       </table>
       <button @click="login">ログイン</button>
-      <p>新しいアカウントを作成しますか？
+      <p>新しいアカウントを作成する場合はこちら
         <router-link to="/signup">新規登録</router-link>
       </p>
   </div>
@@ -29,13 +29,12 @@ export default {
   methods: {
     login: function () {
       firebase.auth().signInWithEmailAndPassword(this.mailaddress, this.password)
-      .then(
-        // 成功時の処理
-        alert('Success!')
-      )
-      .catch(
-        // エラー時の処理 
-      )
+      .then(function(){
+           alert("ログインしました")
+      })
+      .catch(function(){
+          alert("メールアドレスかパスワードが間違っています")
+      })
     }
   }
 }

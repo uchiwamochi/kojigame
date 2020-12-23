@@ -6,6 +6,7 @@ import Vs from '../views/Vs.vue'
 import RemoteVs from '../views/RemoteVs.vue'
 import Signup from '../views/Signup.vue'
 import Signin from '../views/Signin.vue'
+import Signout from '../views/Signout.vue'
 
 Vue.use(VueRouter)
 
@@ -17,7 +18,7 @@ const routes = [
     component: Solo
   },
   {
-    path: '/vs',
+    path: '/',
     name: 'Vs',
     component: Vs
   },
@@ -36,6 +37,12 @@ const routes = [
     path: '/signin',
     name: 'Signin',
     component: Signin
+  },
+  {
+    path: '/signout',
+    name: 'Signout',
+    component: Signout,
+    meta: { requiresAuth: true }
   }
 
 ]
