@@ -1,7 +1,7 @@
 <template>
 
 <div class="signout">
-  <img class="img" src="../assets/logo.png" width="250" />
+  <img class="img" src="../assets/logo.png" />
   <h3>ログアウトしますか？</h3>
   <br><button class="button" @click="signout">ログアウト</button>
 </div>
@@ -45,7 +45,7 @@ export default {
   align-items: center
 }
 .button{
-    background-color:rgb(180, 221, 204);
+    background-color:#9bddbf;
     border-radius: 100vh;
 }
 </style>

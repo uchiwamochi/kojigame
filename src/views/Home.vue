@@ -1,8 +1,9 @@
 <template>
   <div class="signin">
-    <h2>Signin</h2>
+
+    <h1>Welcome to SLIPE!</h1>
       <img class="img" src="../assets/pazzle.png" width="200" /><br>
-    <a1>このサービスの利用にはログインが必要です</a1>
+    <a1>オンライン対戦にはログインが必要です</a1>
     <table class="table" align="center" border="0">
         <tr>
           <th>メールアドレス：</th>
@@ -54,6 +55,9 @@ export default {
 button{
     background-color:#9bddbf;
     border-radius: 100vh;
+}
+h1{
+    color: #42b983;
 }
 
 </style>

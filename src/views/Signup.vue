@@ -1,5 +1,7 @@
 <template>
   <div class="signup">
+    <h2>Signup</h2>
+    <img class="img" src="../assets/logo.png" width="250" />
     <table class="table" align="center" border="0">
         <tr>
           <th>メールアドレス：</th>
@@ -20,8 +22,17 @@
 
 <script>
 import firebase from "firebase"
+import AssetsImage from "@/assets/logo.png";
+
 
 export default {
+  data() {
+    return {
+      assetsImage: AssetsImage,
+      assetsImage_NG: "../assets/logo.png",
+      staticImage: "/logo.png"
+    };
+  },
   methods: {
     signUp: function () {
       firebase.auth().createUserWithEmailAndPassword(this.mailaddress, this.password)

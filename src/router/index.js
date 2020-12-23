@@ -1,6 +1,7 @@
 import firebase from "firebase"
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
 import Solo from '../views/Solo.vue'
 import Vs from '../views/Vs.vue'
 import RemoteVs from '../views/RemoteVs.vue'
@@ -13,12 +14,17 @@ Vue.use(VueRouter)
 //どのコンポーネントにするかコンポーネントの数だけpathをつくる
 const routes = [
   {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
     path: '/solo',
     name: 'Solo',
     component: Solo
   },
   {
-    path: '/',
+    path: '/vs',
     name: 'Vs',
     component: Vs
   },
