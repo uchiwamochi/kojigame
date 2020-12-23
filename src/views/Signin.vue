@@ -1,5 +1,6 @@
 <template>
   <div class="signin">
+      <img class="img" src="../assets/logo.png" width="250" /><br>
     <a1>このサービスの利用にはログインが必要です</a1>
     <table class="table" align="center" border="0">
         <tr>
@@ -24,13 +25,21 @@
 
 <script>
 import firebase from "firebase"
+import AssetsImage from "@/assets/logo.png";
 
 export default {
+  data() {
+    return {
+      assetsImage: AssetsImage,
+      assetsImage_NG: "../assets/logo.png",
+      staticImage: "/logo.png"
+    };
+  },
   methods: {
     login: function () {
       firebase.auth().signInWithEmailAndPassword(this.mailaddress, this.password)
       .then(function(){
-           alert("ログインしました")
+           alert("ログインしました　もう一度Remort VSをクリックして下さい")
       })
       .catch(function(){
           alert("メールアドレスかパスワードが間違っています")

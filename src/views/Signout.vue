@@ -1,7 +1,9 @@
 <template>
-<div>
-  <a1>ログアウトしますか？</a1>
-  <button @click="signout">ログアウト</button>
+
+<div class="signout">
+  <img class="img" src="../assets/logo.png" width="250" />
+  <h3>ログアウトしますか？</h3>
+  <br><button class="button" @click="signout">ログアウト</button>
 </div>
 </template>
 
@@ -10,8 +12,16 @@
 
 <script>
 import firebase from "firebase"
+import AssetsImage from "@/assets/logo.png";
 
 export default {
+  data() {
+    return {
+      assetsImage: AssetsImage,
+      assetsImage_NG: "../assets/logo.png",
+      staticImage: "/logo.png"
+    };
+  },
   methods: {
     signout() {
       firebase.auth().signOut().then(function(){
@@ -24,3 +34,18 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.signout{
+  margin-top: 20px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center
+}
+.button{
+    background-color:rgb(180, 221, 204);
+    border-radius: 100vh;
+}
+</style>
