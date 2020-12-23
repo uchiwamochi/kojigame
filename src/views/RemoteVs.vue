@@ -222,6 +222,7 @@ export default {
   computed:{
   },
   created(){
+    this.reset()
     const self = this
     firebase.database().ref("test").on('value', function(snapshot){
       self.field = snapshot.val().field

@@ -3,7 +3,9 @@
     <div id="nav">
       <router-link to="/solo">Solo</router-link> |
       <router-link to="/vs">VS</router-link> |
-      <router-link to="/remotevs">Remote VS</router-link>
+      <router-link to="/remotevs">Remote VS</router-link>|
+      <!-- <router-link to="/signup">Sign Up</router-link>| -->
+      <!-- <router-link to="/signin">Sign In</router-link> -->
      
     </div>
     <router-view/>

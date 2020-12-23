@@ -1,7 +1,6 @@
 <template>
   <div class="Home">
     <h1>VS</h1>
-    <button @click="send()">send</button>
     <div class="user1" style="float:left">
       <h1>Player1</h1>
       <br><br> <h2>{{count1}}</h2>
@@ -212,6 +211,9 @@ export default {
     }
   },
   computed:{
+  },
+  created(){
+    this.reset()
   }
 }
 </script>
